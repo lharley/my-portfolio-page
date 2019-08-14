@@ -1,0 +1,780 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <title>Portfolio - Laura Harley</title>
+
+    <meta name="author" content="Laura Harley">
+    <meta name="description" content="Portfolio site of Laura Harley, software product designer, information architect, UX designer,
+    and front-end developer, with over 10 years of experience in Web design and development.">
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+
+    <link rel="stylesheet" href="css/responsive_styles.css">
+    <link rel="stylesheet" href="css/source-sans-pro.css">
+    <link rel="stylesheet" href="css/font-awesome.css">
+    <link rel="stylesheet" href="css/linear-icons-demo.css">
+    <link rel="stylesheet" href="css/jQueryCSS/jquery-ui.css">
+
+    <script src="js/jquery-3.4.1.js"></script>
+    <script src="js/jquery-ui.js"></script>
+
+    <script type="text/javascript">
+
+        $( document ).ready(function() {
+
+            $( "div.pane").hide();
+            $( "div.tile div.footer div.tileLongDesc").hide();
+            $( "div.tile div.tileBtns").hide();
+
+            $( "div.closeBox" ).click( function() {
+                $( "div.pane" ).hide();
+            });
+
+            // on clicking a tile, the click routine copies tile info into the popup pane
+            $( "div.tile" ).click( function() {
+
+                let curCategory = $( this).find("h2.tile").html();
+                let curImgSrc = $( this ).find( "img").attr("src");
+                console.log('curImgSrc = ' + curImgSrc);
+
+                let curCompanyName  = $( this ).find( "h1.tile" ).html();
+                let curSampleName = $( this ).find("h3.tile").html();
+                let curLongDesc = $(this).find("div.tileLongDesc").html();
+                let curBtns = $( this).find("div.tileBtns").html();
+
+                $( "div.pane div.header" ).find( "h1.pane" ).html(curCompanyName);
+                $( "div.pane div.header" ).find( "h2.pane" ).html(curCategory);
+                $( "div.pane div.header" ).find( "h3.pane" ).html(curSampleName);
+                $( "div.pane div.header" ).find( "p.paneDescription").html(curLongDesc);
+                $( "div.pane" ).find( "img" ).attr("src", curImgSrc);
+                // if there are no additional samples, the button holder is empty so nothing shows
+                $( "div.pane div.paneSidebar" ).find( "div.btnHolder").html(curBtns);
+
+                showPopupPane();
+            });
+
+        });
+
+        // the pane routine uses the template pane aat the close of the HTML
+        // to set default widths, padding, etc.
+
+        function showPopupPane() {
+            let newLeft = "";
+            let defaultTop = 1600;
+            let topOffsetAmount = 80;
+            let leftOffsetAmount = "";
+            let curContentWidth, curPaneWidth, curPaddingLeft, curPaddingRight;
+            let totalPaneWidth, widthDiff, curContentOffsetLeft;
+            let curPortfolioPosTop, curDocScrollTop;
+
+
+            curPaneWidth = parseInt( $("div.pane").css("width") );
+            curPaddingLeft = parseInt( $("div.pane").css("paddingLeft") );
+            curPaddingRight = parseInt( $("div.pane").css("paddingRight") );
+            totalPaneWidth = curPaneWidth + curPaddingLeft + curPaddingRight;
+
+            curContentWidth = parseInt( $("main").css("width") );
+            widthDiff = curContentWidth  - totalPaneWidth;
+            leftOffsetAmount = Math.round( widthDiff/2 );
+
+            curContentOffsetLeft = $("main").offset().left; // position is off of document
+            curPortfolioPosTop = $( " #portfolio ").position().top;
+
+            curDocScrollTop = $( document ).scrollTop();
+
+            if ( curDocScrollTop < curPortfolioPosTop ) {
+                $( "div.pane").css("top", defaultTop);
+            } else {
+                $( "div.pane").css("top", curDocScrollTop + topOffsetAmount);
+            }
+
+            newLeft = parseInt(curContentOffsetLeft + leftOffsetAmount);
+
+            $( "div.pane" ).css("left", newLeft);
+
+            // get and set the HTML for the title and descriptions
+
+            $( "div.pane" ).show();
+        }
+
+        // for smaller phone screens, hide part of the long intro
+        // text with a "more" link, so the tile examples show above
+        // the fold; user can read full text by clicking 'more link'
+        function toggleInfo(){
+            let curContentObj = document.getElementById('about');
+            let curSidebarObj = document.getElementById('UX_info');
+            let curBtnObj = document.getElementById('moreBtn');
+            let curFaderObj = document.getElementById('fader');
+            let curText = curBtnObj.innerHTML;
+
+            if (curText == "Read More"){
+                curBtnObj.innerHTML = "Read Less";
+                curContentObj.style.height = "auto";
+                curSidebarObj.style.height = "auto";
+                curFaderObj.style.display = "none";
+
+            } else {
+                curBtnObj.innerHTML = "Read More";
+                curContentObj.style.height = "530px";
+                curSidebarObj.style.height = "480px";
+                curFaderObj.style.display = "block";
+            }
+        }
+
+    </script>
+
+
+</head>
+<body>
+
+<main class="mainContainer">
+    <a name="top"></a>
+
+    <div class="banner">
+        <img class="masthead" src="images/info_architecture_masthead.jpg " alt="photo of a businessman's
+            hand drawing a white outline sketch of a set of connected gears."/>
+    </div>
+    <nav class="nav">
+        <img class="cameo" src="images/lharley_cameo4_light_bck.png" alt="cameo inset photo of Laura Harley"/>
+        <div class="menuItem"><a href="#portfolioAnchor">Portfolio</a></div>
+        <div class="menuItem"><a href="#resumeAnchor">Resume</a></div>
+        <div class="menuItem"><a href="#contactAnchor">Contact</a></div>
+    </nav>
+    <section class="intro">
+        <aside class="sidebar" id="UX_info">
+
+          <img src="images/org_chart_logo.png">
+            <p>
+                Navigation and website structure are normally the responsibility of the UX architect.
+            Information architecture is a key discipline of the UX architect and information
+            design is a key activity in structuring good software. Information
+            architecture focuses on the information context, the cognitive capabilities of the
+                user,  and the knowledge and taxonomy of the task domain.</p>
+
+
+        </aside>
+       <div class="articleHolder">
+            <article class="about" id="about">
+            <h2>Hello, my name is <strong>Laura Harley</strong> and I'm an...</h2>
+
+            <h1> ... UX Designer and Front-end Developer.</h1>
+            <h3>About Me</h3>
+            <p>I believe good UX design is the result of hard work and insight born of knowledge. UX design is about
+                solving problems, not making things look good. The more you know and understand a problem,
+                the easier it is to define a solution. Following a systematic process is important, but all artifacts
+                in the UX lifecycle are exercises in gaining knowledge about users and understanding the task context.
+                I love designs that are clean and simple, not because that's the current fashion, but
+                because clean and simple focuses the user on the essentials and doesn't waste the user's time.
+                Simple feels like it should be easy to do, since, well, it's simple. But simple turns out to be
+                very hard to do. Simplicity only comes from knowing the user and the task space. If
+                you have knowledge, you know what is clutter and what is essential to the user, so you can design an experience
+                that allows the user to accomplish the task goals, with speed, few errors, and satisfaction.
+            </p>
+            <p>So, if I'm so passionate about design and users, why am I a front-end developer? One reason is
+                that I aspire to be the UX/UI front-end developer I always wanted to work with. I am sensitive to
+                the details of graphic and interaction design and I know UI platform standards and
+                UX best practices in a way that most front-end developers do not. This means my implementations reflect
+                the spirit of an UX design, not just the functional specifications. They provide better UX experiences,
+                because they follow UX best practices in terms of visual design, information design, and interaction
+                design. A second reason that I code is that coding provides knowledge and insight into Web technologies,
+                as well as the technical challenges developers face. This knowlege makes me a better designer and
+                UX problem solver. Coding also  makes me a better team collaborator, with developers and product stakeholders.
+                Besides, making  Web pagse come alive with interactions, insightful data, and elegant animations is just
+                plain fun.</p>
+            </article>
+
+           <div id="fader"></div>
+           <a id="moreBtn" href="#" onClick="toggleInfo()">Read More</a>
+
+       </div>
+
+    </section>
+    <section class="section" id="portfolio">
+        <a name="portfolioAnchor"></a>
+        <h2 class="section">Portfolio</h2>
+        <p class="comments"> This page makes use of modern coding techniques. Some features won't display properly if you're using an out-dated browser,
+            especially if you are viewing on a phone or tablet. </p>
+
+        <div class="tilesHolder">
+
+            <div class="tile" id="tile01"> <!-- start tile -->
+                <div class="tileHeaderBar">
+                    <h2 class="tile">Category: Responsive Design + Coding </h2>
+                </div>
+
+                <div class="sample">
+                    <div class="sliderOverlay" id="overlay01">
+                        <img class="sample"
+                             src="images/mobile_handle_portfolio_page.png"
+                             alt="image showing example of this Portfolio page on an iPhone 7/8"/>
+                    </div>
+                    <div class="overlayText">
+                        Click for: <br>
+                        <ul class="tileList">
+                            <li>Larger Image</li>
+                            <li>View Code - GitHub</li>
+                            <li>Project and Coding Notes</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="footer">
+                    <h1 class="tile">SELF PROMOTION</h1>
+                    <h3 class="tile">Portfolio Page</h3>
+                    <p class="tileDesc">My portfolio is an example of my responsive design
+                        and development skills. Open this page on a tablet or phone. To learn more, read the
+                        Project Notes.</p>
+                    <div class="tileLongDesc">
+                        <p>I had two objectives for my portfolio. First
+                        I wantedto show the broad range of my experience. I also
+                        wanted a portfolio that was interactive, that allowed the user to browse examples
+                        and then choose which examples to explore in more detail. Second, I wanted to
+                        show my responsive design and mobile device coding skills. In the past two years
+                        I have completed several Udacity's Mobile Web Design and Development
+                        courses. This was done a part of their Nano Degree certification program.
+                        I wanted a working example of what I have learned. The <span class="boldFont600">Project Notes</span>
+                            contain the full details.</p>
+                    </div>
+                </div>
+
+                <div class="tileBtns">
+                    Learn More<br />
+                    <div class="actionBtn"><a href="article_projectNotes.html" class="btn">Project Notes</a></div>
+                    <div class="actionBtn"><a href="https://github.com/lharley/my-portfolio-page" target="_blank" class="btn">View Code - GitHub</a></div>
+                </div>
+            </div> <!-- end tile -->
+
+            <div class="tile" id="tile02"> <!-- start tile -->
+                <div class="tileHeaderBar">
+                    <h2 class="tile">Category: Info Architecture/Product Design</h2>
+                </div>
+                <div class="sample">
+                    <div class="sliderOverlay" id="overlay02">
+                        <img class="sample" src="images/Morpho_POC_Supervisor_Dashboard.png" alt=""/>
+                    </div>
+                    <div class="overlayText">
+                        Click for: <br>
+                        <ul class="tileList">
+                            <li>Storyboards </li>
+                            <li>Personas</li>
+                            <li>Working Prototype</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="footer">
+                    <h1 class="tile">MORPHOTRUST USA</h1>
+                    <h3 class="tile">Issuance Manager 360 - Supervisor Dashboard</h3>
+                    <p class="tileDesc">
+                        As the information architect and lead UX desgner,
+                        I lead the re-envisioning of the company's main product, renamed Issuance Manager 360.
+                       </p>
+                    <div class="tileLongDesc">
+                        <p>For the re-envisioning of the company's main
+                        product, thirty-two individual applications and device drivers
+                        were combined into a modern, modularized platform. Individual
+                        modules, such as Identity 360,  Issuance 360, and Security 360,
+                        had to function as a coordinated application or work as an individual,
+                        stand-alone applications, depending on which modules a customer purchased.</p>
+
+                        <p>As part of the re-envisioningin we modernized the software to include
+                        both a Web application and Web-enabled mobile apps. This expansion allowed us
+                        to address user issues in new ways. In user research, we found that the email alert for critical
+                        issues was not alerting in a timely manner. Users only checked email a few times
+                        a day. The staff constantly used the issuance software through the workday, so
+                        I proposed a dashboard for the new mobile-enabled Web app, where each user's
+                        critical job functions were provided a status and an alert warning, if needed. In addition
+                        to the email notifications, text message (SMS) alerts were sent directly to user's
+                        mobile devices.</p>
+                        </div>
+                </div>
+                <div class="tileBtns">
+                    Learn More<br />
+                    <div class="actionBtn"><a href="files/MorphoTrust_Redesign_storyboards.pdf" target="_blank" class="btn">Storyboards</a></div>
+                    <div class="actionBtn"><a href="article_personas.html" class="btn">Personas Case History</a></div>
+                    <div class="actionBtn"><a href="files/New_Personas_UXRedesign2.pdf" target="_blank" class="btn">Persona Examples</a></div>
+                    <div class="actionBtn"><a href="files/Morpho_mobile_integration_scenario.pdf" target="_blank" class="btn">Persona Scenario</a></div>
+                    <div class="actionBtn"><a href="demos/morphotrustPOC/sign_in_final.html" target="_blank" class="btn">Working Prototype</a></div>
+                </div>
+            </div> <!-- end tile -->
+
+
+
+            <div class="tile"id="tile03"> <!-- start tile -->
+                <div class="tileHeaderBar">
+                    <h2 class="tile">Category: UX Design</h2>
+                </div>
+                <div class="sample">
+                    <div class="sliderOverlay" id="overlay04">
+                        <img class="sample" src="images/Morpo_prototype_flow.png" alt=""/>
+                    </div>
+                    <div class="overlayText">
+                        Click for: <br>
+                        <ul class="tileList">
+                            <li>Larger Image</li>
+                            <li>Flow Diagram</li>
+                        </ul>
+                    </div>
+                </div>
+                 <div class="footer">
+                     <h1 class="tile">MORPHOTRUST USA</h1>
+                      <h3 class="tile">Flow Diagram for Prototype</h3>
+                       <p class="tileDescription">Based on user testing, the existing software needed redesign.
+                                The prototype was used to test the interaction design and dynamic
+                           page flow .</p>
+                        <div class="tileLongDesc">During the design process, we built
+                        small prototypes targeted at key Credential Examiner tasks. The
+                            flow diagram shown was intended for the developer, not customers,
+                            so it is very detailed. Through these prototypes we
+                            validated the feasibility of the design internally
+                            and then took the prototype to customers
+                            for review. We demonstrated the working prototypes to stakeholders
+                            and key end users. A few of the key end users used the functioning
+                            prototype. We observed these users working
+                            with the system, answered any questions they had, and then we took
+                            detailed feedback from the participants.
+                        </div>
+                 </div>
+                <div class="tileBtns">
+                    Learn More<br />
+                    <div class="actionBtn"><a href="files/Prototype_Scope_and_Flow.pdf" target="_blank" class="btn">Prototype Flow PDF</a></div>
+                </div>
+            </div> <!-- end tile -->
+
+
+
+            <div class="tile" id="tile04"> <!-- start tile -->
+                <div class="tileHeaderBar">
+                    <h2 class="tile">Category: Data Visualization</h2>
+                </div>
+                <div class="sample">
+                    <div class="sliderOverlay" id="overlay05">
+                        <img class="sample" src="images/IBM_Radar_graph.png" alt=""/>
+                   </div>
+                    <div class="overlayText">
+                        Click for: <br>
+                        <ul class="tileList">
+                            <li>Larger Image</li>
+
+                        </ul>
+                    </div>
+                </div>
+                <div class="footer">
+                    <h1 class="tile">IBM OPENPAGES</h1>
+                    <h3 class="tile">Risk Assessment Visualizations</h3>
+                    <p class="tileDescription">Proposed visualization enhancements to reporting and analysis of risk assessment and risk control features.</p>
+                    <div class="tileLongDesc">Short case history and project artifacts to come.</div>
+                </div>
+
+                <div class="tileBtns">
+
+                </div>
+            </div> <!-- end tile -->
+
+
+            <div class="tile" id="tile05"> <!-- start tile -->
+                <div class="tileHeaderBar">
+                    <h2 class="tile">Category: Mobile UI/UX Design</h2>
+                </div>
+                <div class="sample">
+                    <div class="sliderOverlay" id="overlay06">
+                        <img class="sample" src="images/resources_manager.png" alt=""/>
+                    </div>
+
+                    <div class="overlayText">
+                        Click for: <br>
+                        <ul class="tileList">
+                            <li>Larger Image</li>
+                            <li>Storyboard Mockups</li>
+                            <li>Click Thru Prototype</li>
+                        </ul>
+                    </div>
+
+                </div>
+                <div class="footer">
+                    <h1 class="tile">MIT LINCOLN LABS</h1>
+                    <h3 class="tile">Resources Manager</h3>
+                    <p class="tileDescription">Mockup of a specialized app that served as a companion to the division's main Website. </p>
+                    <div class="tileLongDesc">
+                        <p>MIT Lincoln Labs is a secure facility. The
+                        mockups shown have been adapted from the actual design I
+                        prepared while working at the Lab. The functional concepts and
+                        the UI design are the same, but the content has been
+                        generalized and cleaned of any specific reference to Lab personnel,
+                        project names, project topics, equipment, and lab capabilities and
+                            processes.</p>
+                        <p>The division I worked for managed several facilities
+                            for use in researching, developing, and testing engineering prototypes.
+                            I was responsible for the design and development of the division's
+                            website, where in addition to other business, the resources
+                            could be booked, equipment reserved, and project participants invited. Lab
+                            personnel worked in many locations throughout the Lab and Hanscom
+                            AFB. They wanted a way to access and manage resources more
+                            conveniently, namely on mobile devices. Because the division's website was
+                            was large and served many purposes, I proposed to extract the functionality
+                            for resource scheduling and create an app solely dedicated to
+                            resources scheduling and management.</p>
+                            <p>The mockups were prepared using Adobe XD and Illustrator. There is a
+                            PDF of the proposed design.  There is also a Click Thru Prototype of the mockups on
+                            Adobe Cloud, which you can access via smartphone or tablet.</p>
+                    </div>
+                </div>
+                <div class="tileBtns">
+                    Learn More<br />
+                    <div class="actionBtn"><a href="files/Resources_Scheduler.pdf" class="btn" target="_blank">Storyboard Mockups PDF</a></div>
+                    <div class="actionBtn"><a href="https://xd.adobe.com/view/e9927435-5c0e-4eb7-60a4-8a27fee2d8cd-9fa3/" target="_blank" class="btn">Click Thru Prototpe</a></div>
+                </div>
+            </div> <!-- end tile -->
+
+            <div class="tile" id="tile06"> <!-- start tile -->
+                <div class="tileHeaderBar">
+                    <h2 class="tile">Category: UI Design</h2>
+                </div>
+                <div class="sample">
+                    <div class="sliderOverlay" id="overlay07">
+                        <img class="sample" src="images/Ventera_home_pg.png" alt=""/>
+                    </div>
+                    <div class="overlayText">
+                        Click for: <br>
+                        <ul class="tileList">
+                            <li>Larger Image</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="footer">
+                    <h1 class="tile">Ventera Corporation</h1>
+                    <h3 class="tile">Company Website Design</h3>
+                    <p class="tileDescription">Redesign and coding of company Website.</p>
+                    <div class="tileLongDesc">Short case history and project artifacts to come.</div>
+                </div>
+                <div class="tileBtns">
+                </div>
+            </div> <!-- end tile -->
+
+
+            <div class="tile" id="tile07"> <!-- start tile -->
+                <div class="tileHeaderBar">
+                    <h2 class="tile">Category: User Advocacy + HCI Education</h2>
+                </div>
+                <div class="sample">
+                    <div class="sliderOverlay" id="overlay08">
+                        <img class="sample" src="images/UX_slide_presentation.png" alt=""/>
+                    </div>
+                    <div class="overlayText">
+                        Click for: <br>
+                        <ul class="tileList">
+                            <li>Larger Image</li>
+                            <li>Slides</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="footer">
+                    <h1 class="tile">Pfizer Inc.</h1>
+                    <h3 class="tile">Presentation at Software Improvement Offsite</h3>
+                    <p class="tileDescription">Pfizer leads  wanted an intro as a prelude to
+                        discussion on incorporating UX into dev process. Reflects my views on UX design process. </p>
+                    <div class="tileLongDesc">
+                        <p>I am often asked to explain UX and User Centered Design.
+                        Part of the role of an UX Designer -- or anyone who works in a
+                        sub-disciplines -- is to advocate for and educate others about
+                            the UX discipline.  As Kim Flarerty of the
+                        Nielson Norman Group states, "good UX design, as is a
+                        very abstract, analytical discipline." As such it can be hard for others to
+                        understand. Even people who call themselves UX designers don't always
+                        understand the deeply analytical nature of the work. Because there are elements of visual design in the work and
+                        because UX designers talk of "empathy" and "user delight," the discipline can seem superficial and
+                            vague. It is not.</p>
+                        <p>See the article by Kim Flaherty: <a style="color: #c3d8ee; font-weight: bold;" target="_blank" href="https://www.nngroup.com/articles/why-personas-fail/">Why Personas Fail</a></p>
+                    </div>
+                </div>
+                <div class="tileBtns">
+                    <div class="actionBtn"><a href="files/UX_presentation_lharley.pdf" target="_blank" class="btn">Slides PDF</a></div>
+                    <div class="actionBtn"><a href="https://www.slideshare.net/llharley/ux-principles-and-practice" target="_blank" class="btn">Slides on Slideshare</a></div>
+
+                </div>
+            </div> <!-- end tile -->
+
+            <div class="tile" id="tile08"> <!-- start tile -->
+                <div class="tileHeaderBar">
+                    <h2 class="tile">Category: UI/UX Design</h2>
+                </div>
+                <div class="sample">
+                    <div class="sliderOverlay" id="overlay09">
+                        <img class="sample" src="images/Trizetto_UM_Request_case_2.png" alt=""/>
+                    </div>
+                    <div class="overlayText">
+                        Click for: <br>
+                        <ul class="tileList">
+                            <li>Larger Image</li>
+
+                        </ul>
+                    </div>
+                </div>
+                <div class="footer">
+                    <h1 class="tile">Trizetto</h1>
+                    <h3 class="tile">Case Management Web Application</h3>
+                    <p class="tileDescription">Heuristic evaluation and redesign.</p>
+                    <div class="tileLongDesc">Short case history and project artifacts to come.</div>
+                </div>
+                <div class="tileBtns">
+
+                </div>
+
+            </div> <!-- end tile -->
+
+            <div class="tile" id="tile09"> <!-- start tile -->
+                <div class="tileHeaderBar">
+                    <h2 class="tile">Category: Visual Design</h2>
+                </div>
+                <div class="sample">
+                    <div class="sliderOverlay" id="overlay10">
+                        <img class="sample" src="images/InSight_Badge_icons.png" alt=""/>
+                    </div>
+                    <div class="overlayText">
+                        Click for: <br>
+                        <ul class="tileList">
+                            <li>Larger Image</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="footer">
+                    <h1 class="tile">InSight Software</h1>
+                    <h3 class="tile">Design of Badges/Icons</h3>
+                    <p class="tileDescription">The badges identify activities in a Web-based application for
+                        business planning, brainstorming, analysis and decision making.</p>
+                    <div class="tileLongDesc">Short case history and project artifacts to come.</div>
+                </div>
+                <div class="tileBtns">
+                </div>
+            </div> <!-- end tile -->
+
+
+            <div class="tile" id="tile10"> <!-- start tile -->
+                <div class="tileHeaderBar">
+                    <h2 class="tile">Category: Illustration</h2>
+                </div>
+                <div class="sample">
+                    <div class="sliderOverlay" id="overlay12">
+                        <img class="sample" src="images/leaves_and_fruits.png" alt=""/>
+                    </div>
+                    <div class="overlayText">
+                        Click for: <br>
+                        <ul class="tileList">
+                            <li>Larger Image</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="footer">
+                    <h1 class="tile">Freelance Project</h1>
+                    <h3 class="tile">Website design and development</h3>
+                    <p class="tileDescription">Examples of illustrations for My Plant Identifications, a scapebook and botany educational program.</p>
+                    <div class="tileLongDesc">Short case history and project artifacts to come.</div>
+                </div>
+                <div class="tileBtns">
+                </div>
+            </div> <!-- end tile -->
+
+
+            <div class="tile" id="tile11"> <!-- start tile -->
+                <div class="tileHeaderBar">
+                    <h2 class="tile">Category: Data Visualization</h2>
+                </div>
+                <div class="sample">
+                    <div class="sliderOverlay" id="overlay13">
+                    <img class="sample" src="images/Tree_Map_Enhancements.png" alt=""/>
+                    </div>
+                    <div class="overlayText">
+                        Click for: <br>
+                        <ul class="tileList">
+                            <li>Larger Image</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="footer">
+                    <h1 class="tile">IBM OpenPages</h1>
+                    <h3 class="tile">Heat Map Using Tree Map Data</h3>
+                    <p class="tileDescription">One view of the application of Tree Map Visualization to entity object hierarchy and risk assessments.</p>
+                    <div class="tileLongDesc">Short case history and project artifacts to come.</div>
+                </div>
+                <div class="tileBtns">
+                </div>
+            </div> <!-- end tile -->
+
+
+            <div class="tile" id="tile12"> <!-- start tile -->
+                <div class="tileHeaderBar">
+                    <h2 class="tile">Category: Data Visualization</h2>
+                </div>
+                <div class="sample">
+                    <div class="sliderOverlay" id="overlay14">
+                        <img class="sample" src="images/Visions_2013_Visuallization_Enhancements.png" alt=""/>
+                    </div>
+                    <div class="overlayText">
+                        Click for: <br>
+                        <ul class="tileList">
+                            <li>Larger Image</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="footer">
+                    <h1 class="tile">IBM OpenPages</h1>
+                    <h3 class="tile">Presentation to Stakeholders and Key End Users</h3>
+                    <p class="tileDescription">Visualization enhancements to core product to include org charts and
+                        process flows with integrated risk data and 'what-if' analysis tools.</p>
+                    <div class="tileLongDesc">Short case history and project artifacts to come.</div>
+
+                </div>
+                <div class="tileBtns">
+                </div>
+            </div> <!-- end tile -->
+
+            <div class="tile" id="tile13"> <!-- start tile -->
+                <div class="tileHeaderBar">
+                    <h2 class="tile">Category: UI Design</h2>
+                </div>
+                <div class="sample">
+                    <div class="sliderOverlay" id="overlay15">
+                        <img class="sample" src="images/IBM_entity_icons.png" alt=""/>
+                    </div>
+                    <div class="overlayText">
+                        Click for: <br>
+                        <ul class="tileList">
+                            <li>Larger Image</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="footer">
+                    <h1 class="tile">IBM OpenPages</h1>
+                    <h3 class="tile">Redesign of Entity Icons</h3>
+                    <p class="tileDescription">Each entity is a page in the system.</p>
+                    <div class="tileLongDesc">Short case history and project artifacts to come.</div>
+                </div>
+                <div class="tileBtns">
+                </div>
+            </div> <!-- end tile -->
+        </div>
+
+      </section>
+
+    <section class="section" id="resume">
+        <a name="resumeAnchor"></a>
+        <h2 class="section">Resume</h2>
+
+        <div class="resumeHolder">
+
+            <div class="gridItem">
+            <h3>Skills</h3>
+               <ul>
+                    <li>10+ years as UX prototyper/front-end developer</li>
+                    <li>10+ years as UX designer, especially envisioning large enterprise systems</li>
+                    <li>Strong content and strategy skills, business stakeholder feature development, brainstroming, competitive analysis</li>
+                    <li>Strong ability to collaborate between development team, stakeholders, and UX design team</li>
+                    <li>Strong information architecture - mental models, gesture models, pattern libraries, site taxonomy and navigation maps</li>
+                    <li>Extensive experience in UX artifacts: journey maps, wireframes, task flows, scenarios</li>
+                    <li>Strong User Research and Discovery – research planning, task observation, contextal inquiries, focus groups, design reviews, surveys, usibility testing</li>
+                    <li>Strong UI design skills:  interface design, flat design, minimal design, high fidelity mockups</li>
+                    <li>Strong Visual Skills – sketches, icons, illustrations</li>
+                    <li>Strong Analytical and Writing Skills  – Vision statements, UX architecture, metrics, heuristic analysis, UI requirements, interaction design, UX specifications, UI style guides, red line specifications</li>
+                    <li>Ability to radically simplify existing systems -- reduce complexity, reduce user’s cognitive load</li>
+                    <li>Experience defining a UI framework or modifying an existing library for reusable patterns and components</li>
+                    <li>Extensive years of experience with Agile, Scrum, Requirements Specification, Software Lifecycle, Jira, Git</li>
+                    <li>Accessibility advocate; 6+ years as W3C-Section 508 Accessibility Lead</li>
+                </ul>
+                <br />
+                    <div class="downloadBtn"><a href="files/L_Harley_UX_Resume.pdf">Download Full Resume (PDF)</a></div>
+            </div>
+
+            <div class="gridItem">
+                <h3>Tools</h3>
+                <ul>
+                    <li>Adobe Creative Suite - Photoshop, Illustrator, After Effects, Premier</li>
+                    <li>10+ years Web development: HTML5, CSS3, modern JavaScript (ES6 and ES7), JSON, Ajax, PHP, W3C standards</li>
+                    <li>UX and UI design tools – Adobe XD, Sketch, InVision, OminGraffle, Visio</li>
+                    <li>Strong tech knowledge – Apache Web server, networks, MongoDB, Windows, Mac, and Linux/Unix</li>
+                    <li>SVG design and coding of icons, intreactive elements, using Illustrataor or direct coding via a text editor</li>
+                    <li>UX design using modern JavaScript and CSS frameworks: jQuery, ReactJS, Prime Faces, Bootstrap, other libraries, ,</li>
+                    <li>Good knowledge: WebStorm and Atom IDEs, Node, NPM, BugZilla, ClearQuest, Jira, Git, and pre-compilers Less, Sass</li>
+                </ul>
+
+                <br />
+                <h3>Education</h3>
+                <ul>
+                    <li>MA Instructional Technology, Curriculum Design, George Mason University, Fairfax, VA</li>
+                    <li>BA History, with Minors in Linquisitics and English Literature, Univ of California, Berkeley, CA</li>
+                    <li>Certification: Software Systems Engineering, George Mason Univeristy, Fairfax, VA</li>
+                    <li>PhD Program Sociology, courses in ethnography, social psychology, Boston Univeristy, Boston, MA</li>
+                    <li>Currently enrolled in Responsive Web Design and Development, Udacity/Google, Online Degree Program</li>
+                </ul>
+            </div>
+        </div>
+
+    </section>
+
+    <section class="section last" id="contact">
+        <a name="contactAnchor"></a>
+        <h2 class="section">Contact Info</h2>
+
+        <div class="contactHolder">
+
+            <div class="contactInfo">
+
+                <p> I cannot relocate out-of-state. I am available for work in Boston, Massachusetts and
+                    Metro North. </p>
+                <p>
+
+                    <span class="boldFont600">Laura Harley</span><br />
+                    UX Designer and Front-End Developer<br />
+                    Haverhill, MA <br /><br />
+                    <span class="italFont crimson">Email is best way to contact me.</span><br />
+                    <span class="boldFont600">Email:</span> lharley [@] designinteractive [dot] com<br />
+                    <span class="boldFont600"> Home Phone:</span> 978-373-0253<br />
+                    <span class="boldFont600">Cell Phone:</span> 703-582-7190
+                </p>
+            </div>
+
+        </div>
+
+
+    </section>
+
+    <footer>
+
+        Copyright &#9400 2018 and 2019; Laura Harley. All rights reserved.</footer>
+
+</main>
+
+<div class="pane">
+    <header class="paneHeader">
+
+        <div class="header">
+            <h2 class="pane">CATEGORY: Product Design + Info Architecture</h2>
+            <h1 class="pane">MorphoTrust USA Inc</h1>
+            <h3 class="pane"> Task Dashboard for Back Office Supvervisor</h3>
+            <p class="paneDescription">Issuance Manager 360 - redesign of the company product line</p>
+        </div>
+
+        <div class="paneSidebar">
+            <div class="closeBox">
+                <i class="fa fa-circle"></i><i class="fa fa-times"></i>
+            </div>
+
+            <div class="btnHolder">
+                Learn More<br />
+                <div class="actionBtn"><a href="#" class="btn">Button 1</a></div>
+                <div class="actionBtn"><a href="#" class="btn">Button 2</a></div>
+                <div class="actionBtn"><a href="#" class="btn">Button 3</a></div>
+            </div>
+
+        </div>
+
+    </header> <!--end header -->
+
+    <div class="paneImgHolder">
+        <img class="pane" src="images/Morpho_POC_Supervisor_Dashboard.png"  alt=""/>
+    </div>
+
+</div>
+
+</body>
+</html>
+

@@ -1,0 +1,616 @@
+@charset "UTF-8";
+/* CSS Document */
+
+html, body {
+    height: 100%;
+    scroll-behavior: smooth;
+}
+
+body {
+    padding: 0;
+    margin: 0 auto 0 auto;
+    font-family: "Source Sans Pro", Verdana, sans-serif;
+    font-weight: 300;
+    font-size: 1.0em;
+    background-color: #dddddd;
+    color: #000000;
+    text-align: center;
+}
+
+
+br.clear {
+    clear: both;
+}
+
+
+/* FONT STYLES */
+
+h1 {
+    font-size: 2.6em;
+    font-weight: 400;
+    margin: 14px 0 50px 0;
+    line-height: 1.2em;
+    padding: 0;
+}
+
+h2 {
+    font-size: 1.8rem;
+    font-weight: 300;
+    margin: 0;
+    padding: 0;
+}
+
+h3 {
+    font-style: italic;
+    font-weight: 400;
+    font-size: 1.2em;
+    padding: 0;
+    margin: 20px 0 8px 0;
+}
+
+strong {
+    font-weight: 400;
+}
+
+.italFont {
+    font-style: italic;
+}
+
+.semiboldFont500 {
+    font-weight: 500;
+}
+
+.boldFont600 {
+    font-weight: 600;
+}
+
+.crimson {
+    color: crimson;
+}
+
+/* STRUCTURE */
+
+main, .mainContainer {
+    max-width: 1350px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    min-width: 890px;
+    text-align: left;
+    height: 3850px;
+    /* border: 1px solid lightgray; */
+}
+
+div.banner {
+    border: none;
+    position: relative;
+    top: -1px;
+    left: 0;
+}
+
+img.cameo {
+    border: none;
+}
+
+nav, .nav {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    text-align: left;
+    height: 65px;
+    padding: 18px 25px 0 120px;
+    margin: 0;
+    background-color: #FFC821;
+    position: relative;
+    top: -5px;
+    left: 0;
+}
+
+div.menuItem {
+    position: relative;
+    height: 30px;
+    background-color: #f8bd25;
+    margin-right: 10px;
+    padding: 10px 25px 2px 25px;
+    font-weight: 500;
+    font-size: 1.1em;
+    display: inline-block;
+    border: 1px solid #fb8f04;
+}
+
+img.masthead {
+    width: 100%;
+    height: auto;
+}
+
+img.cameo {
+    height:280%;
+    position: absolute;
+    top: -95px;
+    left: 35px;
+    z-index: 6;
+}
+
+section.intro {
+    margin: 0;
+    display: grid;
+    grid-template-columns: 25% 73%;
+    column-gap: 40px;
+    background-color: #f8f3e7;
+    position: relative;
+    top: -5px;
+    left: 0;
+}
+
+aside.sidebar {
+    margin: 80px 0 20px 34px;
+    padding: 0 15px 20px 15px;
+    font-size: 1.0rem;
+}
+
+div.articleHolder {
+
+}
+
+article.about {
+    margin: 40px 20px 0 20px;
+    padding: 0 120px 20px 20px;
+    font-size: 1.0em;
+}
+
+div#fader {
+    display:none;
+}
+
+a#moreBtn {
+    display: none;
+    color: blue;
+    font-size: 1.0em;
+    text-decoration: underline;
+    position: relative;
+    left: 0;
+    top: -80px;
+    margin: 0 0 20px 20px;
+    padding: 0 0 0 20px;
+}
+
+div.skillsHolder {
+    margin: 30px 0 0 0;
+    font-size: 1.1em;
+    font-weight: 500;
+}
+
+ul.skills {
+    list-style-type: none;
+    margin: 0;
+    padding-left: 26px;
+
+}
+
+ul.skills li {
+    margin: 14px 0 14px 0;
+}
+
+p {
+    font-weight: 300;
+    font-size: 1.0rem;
+    line-height: 1.8em;
+    margin: 4px 0 36px 0;
+}
+
+section.section {
+    margin: 40px 0 30px 0;
+    padding: 40px 0 30px 40px;
+    vertical-align: top;
+    width: 100%;
+    background-color: #ffffff;
+    position: relative;
+    top: -5px;
+    left: 0;
+    box-sizing: border-box;
+}
+
+section.section h2.section, section#portfolio p.comments {
+    margin-left: 24px;
+}
+
+section#portfolio {
+    padding: 40px 0 30px 44px;
+}
+
+div.resumeHolder {
+    margin: 30px auto 30px auto;
+    padding: 0;
+    padding-left: 30px;
+    width: 97%;
+    font-size: 1.1em;
+    display: grid;
+    grid-template-columns: 47% 38%;
+    grid-column-gap: 60px;
+    align-items: start;
+    grid-row-gap: 55px;
+    box-sizing: border-box;
+}
+
+div.resumeHolder ul {
+    list-style: disc;
+    padding: 0;
+    margin: 0;
+    margin-left: 20px;
+}
+
+div.resumeHolder li {
+    margin-bottom: 22px;
+    margin-left: 0;
+}
+
+div.tilesHolder {
+    margin: 30px auto 30px auto;
+    padding: 0;
+    width: 100%;
+    vertical-align: top;
+    /* border: 1px solid red; */
+    display: grid;
+    grid-template-columns: 31% 31% 31%;
+    grid-column-gap: 20px;
+    align-items: start;
+    grid-row-gap: 55px;
+    box-sizing: border-box;
+}
+
+div.tile {
+    width: 100%;
+    font-size: 1em;
+    height: auto;
+    min-height: 200px;
+    border: 2px solid lightgray;
+    position: relative;
+    transition: .5s ease;
+}
+
+div.sliderOverlay {
+    background-color: black;
+    color: white;
+    font-size: 1.1em;
+    opacity: 1;
+    width: 100%;
+    transition: .5s ease;
+    text-align: center;
+}
+
+div.overlayText {
+    display: block;
+    position: absolute;
+    left: 100px;
+    top: 365px;
+    color: white;
+    background-color: black;
+    font-size: 1em;
+    opacity: 0.0;
+    width: 200px;
+    height: 70px;
+    padding: 6px 8px;
+    transition: .5s ease;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 6px;
+}
+
+div.tileHeaderBar {
+    height: 27px;
+    background-color: #FFE49F;
+    width: 100%;
+    padding: 3px 10px 6px 12px;
+    box-sizing: border-box;
+}
+
+h1.tile, h2.tile, h3.tile, p.tileDescription {
+    font-family: "Source Sans Pro", Verdana, sans-serif;
+    font-size: 1em;
+    font-style: normal;
+    font-weight: 400;
+    margin: 0;
+    padding: 0;
+    line-height: 1.3em;
+}
+
+h1.tile {
+    font-size: .8em;
+    font-weight: 300;
+    padding-bottom: 1px;
+}
+
+h3.tile {
+    font-size: 1em;
+    font-weight: 700;
+    padding-bottom: 10px;
+}
+
+p.tileDescription {
+    margin-bottom: 6px;
+}
+
+div.sample {
+    min-height: 200px;
+    width:100%;
+    background-color: black;
+}
+
+img.sample {
+    width: 100%;
+    height: auto;
+}
+
+div.tile div.footer {
+    width: 100%;
+    height: auto;
+    background-color: black;
+    color: white;
+    padding: 10px 30px 24px 30px;
+    box-sizing: border-box;
+    line-height: 1.35em;
+}
+
+div.downloadBtn {
+    display: inline-block;
+    margin: 40px 40px 30px 20px;
+    text-align: center;
+    padding: 14px 14px 0 14px;
+    height: 34px;
+    width: 220px;
+    color: white;
+    font-weight: 400;
+    font-size: 1.0em;
+    background-color: #00315D;
+}
+
+div.contactInfo {
+    font-size: 1.3em;
+    font-weight: 400;
+    line-height: 2em;
+    display: inline-block;
+    margin: 20px 0 20px 100px;
+}
+
+footer {
+    padding: 40px 0 20px 84px;
+    font-size: .8em;
+}
+
+/* POPUP PANE */
+
+div.pane {
+    display: none;
+    position: absolute;
+    top: 1600px;
+    left: 145px;
+    width: 100%;
+    max-width: 1140px;
+    min-width: 960px;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 1px 1px 18px 3px #999999;
+    background-color: #5e5d5d;
+    z-index: 8;
+    padding: 38px 60px 24px 60px;
+}
+
+div.paneTitleBarHolder {
+    padding: 0;
+    margin: 0;
+    height: auto;
+    /* border: 1px solid white; */
+}
+
+div.title {
+    text-align: left;
+    float: left;
+    width: 790px;
+    min-height: 85px;
+    height: auto;
+    color: white;
+    padding: 5px 0 20px 22px;
+    /* border: 1px solid white; */
+    margin: 0;
+}
+
+/* main tiltle for image */
+h1.pane {
+    font-family: "Source Sans Pro", Verdana, sans-serif;
+    font-weight: 600;
+    font-style: normal;
+    font-size: 1.3em;
+    padding: 0;
+    margin: 0;
+}
+
+/* company name or project type */
+h2.pane {
+    padding: 0 0 6px 0;
+    margin: 0;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 1.1em;
+}
+
+/* cateoory at top of pane */
+h3.pane {
+    padding: 0;
+    margin: 0;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 1.1em;
+}
+
+p.paneDescription {
+    margin: 0;
+    padding: 6px 0 0 0;
+    font-weight: 300;
+    font-style: normal;
+    font-size: 1em;
+    line-height: normal;
+}
+
+/* close box is made up of several elements */
+div.closeBox {
+    float: right;
+    width: 36px;
+    text-align: right;
+    height: 36px;
+    /* border: 1px solid white; */
+}
+
+i.fa-times {
+    color: black;
+    font-size: 1.6em;
+    position: relative;
+    left: -3px;
+    top: -27px;
+}
+
+i.fa-circle {
+    color: white;
+    font-size: 1.9em;
+}
+
+i.fa-times:hover {
+    color: #ec9b0d;
+    cursor: pointer;
+}
+
+/* pane buttons hold links to external file or URLs */
+div.paneBtn {
+    width: 180px;
+}
+
+/* image example is in a container that controls placement and margins */
+
+div.paneContentHolder {
+    width: 100%;
+    padding: 0;
+    margin: 10px 25px 20px 15px;
+    height: auto;
+}
+
+img.pane {
+    width: 100%;
+    height: auto;
+}
+
+
+
+
+/* LINKS AND ROLLOVER BEHAVIORS */
+
+div.tile:hover{
+    cursor: pointer;
+}
+
+div.tile:hover .sliderOverlay{
+    opacity: 0.4;
+    transition-delay: 0.3s;
+}
+
+div.tile:hover .overlayText{
+    opacity: 1.0;
+    color: white;
+    display: block;
+    z-index: 100;
+    left: 100px;
+    top: 125px;
+    transition-delay: 0.3s;
+}
+
+div.menuItem:hover {
+
+    background-color: #FFD267;
+}
+
+div.downloadBtn a:link, div.downloadBtn a:active, div.downloadBtn a:visited, div.downloadBtn a:hover {
+    color: white;
+    text-decoration: none;
+}
+
+div.menuItem a:link, div.menuItem a:active, div.menuItem a:visited, div.menuItem:hover {
+    color: black;
+    text-decoration: none;
+}
+
+/* MEDIA QUERIES */
+
+/* iPad + tablets */
+@media screen and (min-width: 500px) and (max-width: 889px){
+
+    div.menuItem {
+        height: 30px;
+        font-size: 1.1em;
+    }
+
+    div.tilesHolder {
+        grid-template-columns: 48% 48%;
+    }
+
+}
+
+/* iPhone 6/7/8 */
+@media screen and (min-width: 320px) and (max-width: 498px) {
+
+    body {
+        margin: 0 auto 0 auto;
+    }
+
+    div.menuItem {
+        height: 34px;
+        font-size: 1.3em;
+    }
+
+    div.skillsHolder {
+        font-size: 1.4em;
+    }
+
+    article.about {
+        margin: 40px 5px 30px 20px;
+        padding: 0 30px 20px 20px;
+        font-size: 1.2em;
+        height: 530px;
+        overflow: hidden;
+    }
+
+    div#fader {
+        display: block;
+        position: relative;
+        left: 0;
+        top: -100px;
+        height: 4.6em;
+        width: 95%;
+        background: linear-gradient( rgba(255,255,255,0), #f8f3e7 100%);
+    }
+
+
+    a#moreBtn {
+        width: 100%;
+        display: inline-block;
+        font-size:1.5em;
+    }
+
+
+    section.intro {
+        column-gap: 15px;
+    }
+
+    ul.skills {
+        padding-left: 16px;
+    }
+
+    p {
+        font-size: 1.4em;
+    }
+
+
+    div.tilesHolder {
+
+        grid-template-columns: 96%;
+    }
+}
+

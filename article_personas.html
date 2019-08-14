@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <title>Project Notes for Portfolio Page - Laura Harley</title>
+
+    <meta name="author" content="Laura Harley">
+    <meta name="description" content="Project notes to the design and development of Laura Harley's portfolio page.">
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+
+    <link rel="stylesheet" href="css/responsive_styles.css">
+    <link rel="stylesheet" href="css/article_styles.css">
+    <link rel="stylesheet" href="css/source-sans-pro.css">
+    <link rel="stylesheet" href="css/font-awesome.css">
+
+</head>
+<body>
+
+<main class="mainContainer">
+    <a name="top"></a>
+
+    <nav class="article">
+        <div class="articleBranding">
+            <img src="images/org_chart_logo.png">
+            <div>Laura Harley Portfolio - <span>Supporting Materials</span></div>
+        </div>
+        <div class="closeBox">
+            <a href="index.html"><i class="fa fa-circle"></i><i class="fa fa-times"></i></a>
+        </div>
+    </nav>
+
+
+    <section class="articleContent">
+
+        <aside class="sidebar">
+            <div>
+                <img src="images/laura_harley_mini_cameo.png">
+            </div>
+        </aside>
+
+        <div class="articleHeader">
+            <h2>1600 Words - 5 Minute Read</h2>
+            <h1>Issuance360 Personas</h1>
+            <h3>Laura Harley - Aug 2091</h3>
+        </div>
+
+        <aside class="sidebarComments">
+            <div>
+
+            </div>
+       </aside>
+
+        <div class="article">
+            <img class="article" src="images/personas_symbols.png">
+            <p>From 2013 to 2016, I was the lead UX architect for the redesign of
+                MorphoTrust's identity scanning devices, processing software, and
+                authentication services.</p>
+
+        </div>
+
+        <aside class="sidebarComments">
+            <div>
+                <p>Links to the personas and a scenarios referenced in article -- <br />
+                <a href="files/New_Personas_UXRedesign2.pdf">MorphoTrust Personas</a><br />
+                <a href="files/Morpho_mobile_integration_scenario.pdf">Mobile Integration Scenario</a>
+                </p>
+            </div>
+        </aside>
+        <div class="article">
+            <h3>Project Background and Context</h3>
+            <p>MorphoTrust's business model -- it's technology and identity services --
+                was extremely complex. The company combined technically
+                specialized SLR cameras, fingerprint scanners,
+                voice recording devices, and retina and voice scanners
+                with custom device drivers. It then combined the
+                devices into application software for identity application
+                processing, authentication and verification -- facial
+                recognition, fingerprint matching, iris and voice recognition.
+                MorphoTrust was also a trusted partner of federal and state governments
+                and used government databases, such as the FBI criminal database,
+                to do background checks on applicants for identity credentials.
+                MorphoTrust also produced identity credentials at 6 plants located
+                throughout the U.S. These credentials were produced to
+                exacting standards of the U.S. government. The company's
+                clients were police departments, state DMVs,  the U.S.
+                State Department, the FAA, banks, airports and security companies.</p>
+        </div>
+
+        <aside class="sidebarComments">
+            <div>
+                <p>A prototype mockup of a driver license card reader, which
+                    verified that security features were present. The
+                    prototype was used during application development.
+                    Built into the software were network facilities
+                   for communicating with federal and state databases
+                    to see if the identity on the license had outstanding
+                    criminal or other security issues.</p>
+            </div>
+        </aside>
+        <div class="article">
+            <img class="article" src="images/driver_license_reader.png">
+            <p>Each of MorphoTrust's client agencies were
+                sold a different customized variation of
+                "the product,' so that by 2013, MorphoTrust was
+                maintaining over 50  product installations.
+                Company leadership wanted to combine all the custom
+                installations into a real product, with a single
+                platform based on a modern UI and a backend based on modern
+                coding practices -- flexible and scalable architecture, resuable
+                components, Restful APIs, JavaSript frameworks, .etc. </p>
+        </div>
+
+        <aside class="sidebarComments">
+            <div>
+
+            </div>
+        </aside>
+        <div class="article">
+            <h3>Personas and Legacy System Documentation</h3>
+            <p>The MorphoTrust product redesign was begun by traditional
+                business analysts (BAs), technical writers, and the development
+                team. Our UX team was created when management found
+                that protential customers were disatisfied with the initial
+                design concepts. Our UX team was established
+                to address the usability issues, non-modern UI look and feel,
+                and lack of technical innovations in the redesign. The Director
+                of UX was hired, then I was the second person hired
+                and became the UX Lead. The team was eventually built out to 8 team members.
+            </p>
+
+            <h3>Issues with User Research and Personas</h3>
+            <p>When the UX team started our work, we inherited user research and traditional
+                use cases created by BAs.</p>
+        </div>
+        <aside class="sidebarComments">
+            <div>
+                <p>The Credential Examiner was the key user of
+                the system in the BAs documentation. This role
+                had the most complicated set of task flows,
+                since there were different types of identity credentials to process.
+                In  DMV agencies, for instance, there could be
+                as many as 22 different types of licenses, such as
+                Commercial Driver License, which had numerous federal
+                and state laws that had to be satisfied before a license could be issued. </p>
+            </div>
+        </aside>
+        <div class="article">
+                <img class="article" src="images/Credential_Examiner_old.png">
+                <p>We assumed that the persona information was sound, because they
+                looked very detailed. As we began our UX design activities,
+                    however, we found inconsitencies and gaps. The original persona had a very
+                    simple job goal -- to help the applicant. And the persona
+                    had only two main psychological attributes -- high engergy
+                    and the lack of knowledge about computers. A number of
+                    the pain points for this persona involved
+                    the lack of devices or devices that ran slow, which were not
+                    easy to remedy though software. The persona
+                    did not have a clear motivation or focus around which
+                    to innovate system features. I didn't expect the BAs to
+                    write UX-like scenarios, but the use cases and task flows
+                    were very complicated and did not coordinate very
+                    well with the simple persona.
+            </p>
+            <p>
+                I met with the buisness analysts and Subject Matter Experts (SMEs).
+                The SMEs explained that they had all worked at state and
+                federal agencies. They had used themselves and their
+                knowledge of staff for the personas. No actual ethnographic
+                research had been done and no quantitative data had
+                been collected from multiple users. Most important
+                for me, no persona scenarios had been developed, so
+                the personas lacked clear task focus in the context
+                of the proposed new software features. Without the scenarios,
+                it was hard to envision how the proposed new system improved
+                the existing system.
+
+            <h3>Limited Ethnographic and Quantitative Research</h3>
+
+            <p> Because of time constraints and the reluctance of leadership to
+                revisit work they felt was already completed, we were limited
+                in what we could do to remedy the lack of good personas.
+                However, after presentations to the project manager and
+                other stackholders, we persuaded leadership to allow members
+                of the UX team to talk with and observe real end users as
+                part of our periodic site visits to present design concepts.</p>
+            </p>
+            <p>While our ethnogrphic research was limited, is was extremely
+                insightful and helped us write better personas. It also helped
+                us find real user pain points, where we could propose innovations.
+                After analyzing the ethnographic research we began an
+                update of the original personas. In talking with Examiners
+                and their supervisor, the Examiner Lead, we learned the
+                complexities of identity rules and agency task flows
+                from the end users' point of view. It wasn't just
+                that  Examiners lacked  computer knowledge, which
+                was mentioned by the original personas. They
+                also lacked knowledge of government
+                identity laws and weren't always sure of agency policies.
+                A number of examiners said when they were unsure, they
+                went to their co-workers who had more knowlege. It
+                was important to the examiners to help each other. They
+                all reported that it took lots of training and 4-5 years of
+                service before they felt comfortable with all the details
+                of the work.</p>
+        </div>
+
+        <aside class="sidebarComments">
+            <div>
+                <p>After analyzing the ethnographic research we began an
+                    update of the original personas. The redefined Credential
+                    Examiner is shown. We found attributes and motivations
+                    that the original peronas did not list. These helped
+                    us see ways to innovate the system.</p>
+            </div>
+        </aside>
+        <div class="article">
+
+            <img class="article" src="images/Ellana_Identity_Examiner.png">
+
+            <p>We found it surprising that none of the Examiners
+                talked about the wait time for applicants or their
+                goal of helping applicants. (The stakeholders
+                of the agency, on the other had, were concerned about
+                applicant wait time and customer service.) What
+                the Examiners talked about was the complexities
+                of the different task flows and the
+                need to avoid mistakes or they would get into trouble.
+                One Examiner said she was worried she might lose her
+                job, if she got another bad report. Another
+                Examiner reported that the malfunctioning
+                scanner caused her to produce poor scans, for which
+                she was reprimanded as a mistake. The concern over
+                mistakes was echoed by the Examiner Lead.
+                It is no wonder agencies have a reputation for slow
+                processing times and poor customer service. Examiners
+                are judged on their accuracy to adhere to agency
+                policies. They are  not judged on how many
+                applications they process or how fast.
+             </p>
+        </div>
+
+        <aside class="sidebarComments">
+            <div >
+
+            </div>
+        </aside>
+            <div class="article">
+                <h3>Additional Personas</h3>
+                <p>The personas for the MorphoTrust product turned out to be
+                    yet more extensive. The BAs had originally identified
+                    the main user as the Credential Examiner who used the software
+                    to process identity credentials. This had always been
+                    the focus of MorphoTrust software, so it was natural
+                    that the BAs focused there. But  there was another
+                    key user, the applicant, which they mentioned
+                    in some use cases. But a persona was not developed.</p>
+
+                <p>After our discussions with agency supervisor staff
+                    on site, it became clear that a major pain point
+                    for agency stakeholders was satisfying applicant needs.
+                    The SMEs were a big help in understanding stakeholder motivation.
+                    Most of them had been an Executive or Director at a local
+                    service center, so they were actual managers
+                    and executives we could interview. They confirmed
+                    that agency managers were concerned about wait times.
+                    They were sensitive to state legislators' and
+                    the public's criticism of poor service and delays.
+                    They wanted software to help their staff work faster while
+                    not making mistakes. Agency management wanted to
+                    reduce workload on agency staff by pushing some
+                    applicantion processing tasks directly
+                    to the applicant via online services. As one SME said,
+                    &quot;Budgets for
+                    personnel at governments agencies never seem to cover
+                    all the staff that is needed to handle the workload.&quot;</p>
+            </div>
+
+        <aside class="sidebarComments">
+            <div >
+                <p>
+                    Because quantitative data showed two major demographic
+                    groups for the general population of applicants,
+                    one for Millenials and one for Gen-X-ers, we
+                    developed personas to represent each group. We developed
+                    a persona for Sylvia - Nurse Applicant, a 23-year-
+                    old millenial and Frank - Small Business Owner, a
+                    52-year-old Gen-X-er. The persona for Frank - Small
+                    Business Owner is shown.
+                </p>
+            </div>
+        </aside>
+
+        <div class="article">
+
+            <img class="article" src="images/Frank_Applicant.png">
+            <p>The original persona for the Credential Examiner and the two
+                updated personas, for the Credential Examiner and Frank Applicant,
+                can be reviewed full sized. An example scenario for the
+                Commercial Driver Applicant is also provided. See the bulleted links below.
+
+            <ul>
+                <li> <a href="files/New_Personas_UXRedesign2.pdf">MorphoTrust Personas</a></li>
+                <li> <a href="files/Morpho_mobile_integration_scenario.pdf">MorphoTrust Mobile Integration Scenario</a></li>
+
+            </ul>
+            </p>
+
+
+        </div>
+
+        <aside class="sidebarComments">
+            <div >
+
+            </div>
+        </aside>
+
+        <div class="article">
+            <h3>Yet More Personas</h3>
+            <p>Our ethnogrphic research led to more surprises. Only by talking with
+                agency staff did we learn that one of the responsibilities
+                of agency supervisors was the job of uploading the
+                processed applications at the end of the day.
+                This job function was not identified in the original system
+                documents, but it turned out to be key in understanding MorphoTrust's
+                business model and the larger scope of the software.</p>
+
+            <p>When agency staff finish processing an applicantion,
+                the application and supporting documentation are sent to a temporary
+                storage area. At the end of each day, the MorphoTrust software bundles these
+                completed applications and sends them to an evaluation server that
+                determines which MorphoTrust production plant will receive applications
+                for producion.</p>
+
+            <p>We knew that MorphoTrust had credential production plants, but
+                we did not know that MorphoTrust identity software sold to agencies
+                included (rudimentary) features for sending processed applications
+                to the production plants. Because software to produce
+                the credentials was a separate product in the
+                MorphoTrust existing product line, the BAs had not
+                included it in the systems documentation for the new
+                platform.  In fact, the uploading software was a small
+                utility. It was easy to overlook. Only by talking with
+                several supervisors on site did we realize the significance
+                of the uploading utility.</p>
+
+            <h3>More Pain Points</h3>
+
+            <p>The upload process was not completely automated,
+                but was initiated manually by an agency supervior. As we
+                discovered from talking with supervisors, this
+                semi-automated data upload resulted in occasional
+                communication issues, either on the agency end or on the MorphoTrust
+                processing server. Agency servers were usually run on old
+                computers and networking services periodically malfunctioned.
+                We learned from talking to the dev team that MorphoTrust
+                did not have automatic error detection in the upload utility
+                and there were limited error detection features in the
+                receiving server software. This information led
+                us to develop a persona for the  Agency Supervisor
+                and the MorphoTrust System Admin. We wrote scenarios
+                that innovated ways for lost communications
+                to be detected, reported, and fixed.
+            </p>
+
+
+            <h3>Yet More Personas.</h3>
+
+            <p>The issues produced by the occasional communication failures between the
+                Agecny and production plants had grave consequences. By contract
+                MorphoTrust had from one to four days to produce a
+                credential and mail it to the applicant. If MorphoTrust did not
+                produce the credential and mail it in the specified time, financial penalties
+                ensued.<p>
+
+                <p>MorphTrust maintained a dedicated agency Account Manager
+                whose job was to monitor the the agency and any issues the
+                agency was having with MorphoTrust software, including the upload process.
+                The Account Manager was also responsible for monitoring the
+                production of credentials at the production plants on behalf of
+                the agency. It was the job of the Account Manager to
+                communicate to the agency and to the VP of Plant Operations any
+                issues.  The VP of Plant Operations's job was to re-route
+                credential production to other plants if there were a
+                production delay. The Account Manager maintained staff for
+               tech support and fixing system issues. </p>
+
+                <p>However, because no errors were detected and no alerts
+                    sent, the Account Manager did not always know there
+                    was a problem. By talking with Account Managers we found
+                    that they had manual and ad hoc processes for detecting issues.
+                    For instance they would run a processing report, which showed that
+                    credential production had stopped. They could then investigate
+                    further to find the problem and fit it. But this approach
+                    relied on the Account Manager to suspect a problem and
+                    manually run the report.</p>
+
+                <p>By this point in the project, the deveopment team and
+                    product management were aware of some of the issues
+                    the Account Manager faced. Like us, they saw a need for the
+                    Account Manager, the Plant Manager, and
+                    MorphoTrust executives to be users of the new
+                    system. We developed personas and scenarios for
+                    these key uers, which led to additional innovations. One
+                    of the solutions we proposed was a Dashboard for each key
+                    user in the system. The Dashboard provided status
+                    information and alerts for all key job tasks,
+                    which provided users a single place to monitor their work.
+                    MorphoTrust Account Managers were provided access permission to view
+                    the dashboards of key agency staff. </p>
+
+        </div>
+
+        <aside class="sidebarComments">
+            <div>
+                <p style="margin-top: 80px;"> The final vision of the personas for the system. We
+                    broke the  the personas out by
+                    groups, based on the organization or company the
+                    persona worked for. The groups broadly aligned with the
+                    modules on which the proposed new system was built.
+                </p>
+            </div>
+        </aside>
+        <div class="article">
+               <h3>Final Personas for the Issuance360 Platform</h3>
+            <p>In the end, the MorphoTrust platform turned out to have a
+                    complex set of personas.</p>
+
+            <img class="article" src="images/Issuance360_personas.png">
+
+                <p>We grouped the persons based
+                    on the company or ogranization, which made it easier
+                    to consider the group as a self-contained unit and to
+                    design sytem features dedicated to the needs of the
+                    personas within the group, without reference
+                    to other groups. By using the groups as a whole, we
+                    could think about the relationships between the groups
+                    and design features to support these relationships. f
+                </p>
+
+
+        </div>
+
+    </section>
+
+    <footer>
+        <div><a href="index.html" class="footer">Back to Portfolio</a></div>
+        Copyright &#9400 2018 and 2019; Laura Harley. All rights reserved.
+    </footer>
+
+</main>
+
+
+
+</body>
+</html>
+

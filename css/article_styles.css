@@ -1,0 +1,183 @@
+@charset "UTF-8";
+/* CSS Document */
+
+/* ARTICLE STYLES
+ /* The Article Temmplate uses the basic responsive styles, except where it overides them.
+   The article style must follow the responsive_styles.css declaration
+*/
+
+nav.article {
+    justify-content: space-between;
+    padding-left: 0;
+}
+
+div.articleBranding {
+    overflow: visible;
+    position: relative;
+    margin: 0 20px 0 20px;
+    z-index: 100;
+}
+
+div.articleBranding img {
+    margin: 10px 10px 0  0;
+}
+
+div.articleBranding div {
+    display: inline-block;
+    position: relative;
+    top: -50px;
+    left: 0;
+    font-size: 1.3em;
+    font-weight: 500;
+}
+
+div.articleBranding div span {
+    color: #ce3303;
+}
+
+section.articleContent {
+    margin:0 0 0 0;
+    padding-left: 30px;
+    padding-bottom: 30px;
+    display: grid;
+    grid-template-columns: 25% 46%;
+    column-gap: 10px;
+    background-color: #f8f3e7;
+    position: relative;
+    top: -5px;
+    left: 0;
+}
+
+section.articleContent aside.sidebar {
+    margin: 100px 0 10px 34px;
+    padding: 38px 0 10px 15px;
+    font-size: 1.0rem;
+    text-align: right;
+}
+
+section.articleContent div.articleHeader {
+    margin: 100px 0 10px 0;
+    padding: 0;
+}
+
+section.articleContent div.articleHeader h1 {
+    font-weight: 600;
+    font-size: 2.2em;
+    margin: 0;
+    padding: 0;
+}
+
+section.articleContent div.articleHeader h2 {
+    font-size: 1.2em;
+    color: #BC6115;
+    color: #94490b;
+    margin: 0 0 10px 0;
+    padding: 0;
+}
+
+section.articleContent div.articleHeader h3 {
+    font-size: 1.0em;
+    margin: 0;
+    padding: 0;
+}
+
+section.articleContent aside.sidebarComments div p,
+section.articleContent aside.sidebarComments div p.links {
+    margin: 0 16px 10px 50px;
+    padding: 42px 0 0 20px;
+    line-height: 1.5em;
+    font-size: .92em;
+    text-align: left;
+    font-weight: 500;
+    font-style: italic;
+}
+
+section.articleContent aside.sidebarComments div p.links{
+    text-align: left;
+    padding: 1px 0 1px 42px;
+    font-size: .8em;
+}
+
+section.articleContent div.article h3 {
+    font-style: normal;
+    color: #BC6115;
+    color: #94490b;
+    font-weight: 600;
+    font-size: 1.2em;
+    margin: 10px 0 0 0;
+    padding: 0;
+    line-height: normal;
+}
+
+section.articleContent div.article {
+    margin: 0 0 0 0;
+    padding: 0 0 0 0;
+    line-height: 1.6em;
+}
+
+section.articleContent div.last {
+    margin: 0;
+    padding-bottom: 50px;
+}
+
+section.articleContent div.article p {
+    margin: 10px 0 25px 0;
+}
+
+section.articleContent div.article ul,
+section.articleContent div.article ul li {
+    line-height: normal;
+    cursor: pointer;
+}
+
+section.articleContent div.article img.article {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+section.articleContent div.article a,
+section.articleContent div.article a:link,
+section.articleContent div.article a:active,
+section.articleContent div.article a:visited,
+section.articleContent div.article a:hover
+{
+    text-decoration: none;
+    color: #0000ee;
+    font-size: 0.9em;
+    cursor: pointer;
+}
+
+section.articleContent div.article a:hover {
+    text-decoration: underline;
+}
+
+/* for the button in footer area */
+footer div {
+    background-color: grey;
+    text-align: center;
+    display: block;
+    margin: 4px 2px 30px 0;
+    padding: 9px 8px 2px 8px;
+    border: 1px solid white;
+    height: 26px;
+    width: 116px;
+    border-radius: 6px;
+}
+
+footer div:hover, footer div:hover a {
+    background-color: lightgray;
+    color: darkred;
+    text-decoration: none;
+}
+
+footer a, footer a:link, footer a:visited, footer a:active {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2em;
+}
+
+footer a:hover {
+    color: darkred;
+    text-decoration: none;
+}
+
